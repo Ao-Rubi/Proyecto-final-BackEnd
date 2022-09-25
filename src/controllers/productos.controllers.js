@@ -1,3 +1,4 @@
+import { json } from "express";
 import Producto from "../models/producto";
 
 export const crearProducto = async (req,res) =>{
@@ -44,6 +45,18 @@ export const editarProducto = async (req,res) =>{
         console.log(error);
         res.status(400).json({
             mensaje: "Error, no se pudo editar el producto"
+        })
+    }
+}
+
+export const listarProducto = async (req,res) =>{
+    try {
+        const obtenerProducto = await Producto.findById(req.params.id);
+        res.status(200).json(obtenerProducto);
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({
+            mensaje: "Error, no se pudo encontrar el producto"
         })
     }
 }
