@@ -16,7 +16,7 @@ const productoSchema = new Schema({
         type: Number,
         required: true,
         min: 0,
-        max: 4000
+        max: 9000
     },
     detalle:{
         type: String,
