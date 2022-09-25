@@ -3,6 +3,9 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
 import * as dotenv from 'dotenv';
+import router from './src/routes/productos.routes'
+
+const app = express();
 
 app.set('port', process.env.PORT || 4000);
 
@@ -17,4 +20,4 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/burgers&beer');
+app.use('/burgers&beer', router );
