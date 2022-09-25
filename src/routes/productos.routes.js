@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { crearProducto } from "../controllers/productos.controllers";
 
 const router = Router()
 
@@ -9,5 +10,6 @@ router
             mensaje: 'peticion get'
         })
     })
+    .post(crearProducto);
 
 export default router;

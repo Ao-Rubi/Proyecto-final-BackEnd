@@ -4,6 +4,7 @@ import cors from 'cors';
 import path from 'path';
 import * as dotenv from 'dotenv';
 import router from './src/routes/productos.routes'
+import './src/database'
 
 const app = express();
 
