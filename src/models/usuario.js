@@ -21,11 +21,10 @@ const usuarioSchema = new Schema({
         // maxlength: 40
     },
     estado:{
-        activo: true
+        activo: false
     },
     prefil:{
-        administrador: false,
-        usuario: true
+        administrador: false
     }
 })
 
