@@ -21,9 +21,11 @@ const usuarioSchema = new Schema({
         // maxlength: 40
     },
     estado:{
+        type: Boolean,
         activo: false
     },
     perfil:{
+        type: Boolean,
         administrador: false
     }
 })
