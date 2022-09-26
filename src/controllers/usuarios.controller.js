@@ -1,8 +1,23 @@
 import Usuario from "../models/usuario";
 import bcrypt from "bcryptjs";
+import { validationResult } from "express-validator";
 
 export const login = (req, res) => {
-    res.send("logued")
+    try {
+
+        //Verifica si existe el email recibido
+
+        //Confirmar si el password es valido
+
+        //Responder que el usuario es valido
+
+        
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({
+            mensaje: "Usuario o contraseña invalidos"
+        })
+    }
 }
 
 export const crearUsuario = async (req, res) => {
