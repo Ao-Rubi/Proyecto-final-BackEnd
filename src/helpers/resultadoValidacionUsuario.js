@@ -1,6 +1,6 @@
 import { validationResult } from "express-validator";
 
-const resutadosValidacionUsuario = (req, res, next) => {
+const resultadosValidacionesUsuario = (req, res, next) => {
     //Validacion
     const errors = validationResult(req);
     //preguntar si hay errores
@@ -14,3 +14,5 @@ const resutadosValidacionUsuario = (req, res, next) => {
     //Le digo que continue con el resto de la funcion
     next();
 }
+
+export default resultadosValidacionesUsuario;
