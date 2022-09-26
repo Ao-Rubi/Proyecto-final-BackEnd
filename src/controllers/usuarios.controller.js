@@ -1,8 +1,8 @@
-export const login = (res, req) => {
+export const login = (req, res) => {
     res.send("logued")
 }
 
-export const crearUsuario = (res, req) => {
+export const crearUsuario = (req, res) => {
     res.send("user creado")
 }
 

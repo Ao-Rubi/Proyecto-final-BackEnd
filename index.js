@@ -5,6 +5,7 @@ import path from 'path';
 import * as dotenv from 'dotenv';
 import router from './src/routes/productos.routes';
 import "./src/database";
+import auth from "./src/routes/usuarios.routes";
 
 const app = express();
 
@@ -22,3 +23,4 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/burgers&beer', router );
+app.use("/burgers&beer/auth", auth);
