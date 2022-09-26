@@ -23,7 +23,7 @@ const usuarioSchema = new Schema({
     estado:{
         activo: false
     },
-    prefil:{
+    perfil:{
         administrador: false
     }
 })
