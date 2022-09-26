@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
 import * as dotenv from 'dotenv';
-import router from './src/routes/productos.routes';
+import router from './src/routes/pedidos.routes';
 import './src/database';
 
 const app = express();
