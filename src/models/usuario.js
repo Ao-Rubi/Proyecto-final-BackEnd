@@ -18,7 +18,7 @@ const usuarioSchema = new Schema({
         type: String,
         required: true,
         minlength: 5,
-        // maxlength: 40
+        maxlength: 70
     },
     estado:{
         type: Boolean,
