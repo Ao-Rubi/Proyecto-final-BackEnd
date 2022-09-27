@@ -1,16 +1,36 @@
 import Usuario from "../models/usuario";
 import bcrypt from "bcryptjs";
-import { validationResult } from "express-validator";
 
-export const login = (req, res) => {
+export const login = async (req, res) => {
     try {
 
         //Verifica si existe el email recibido
+        const {email, password} = req.body
+
+        let usuario = await Usuario.findOne({email});
+        if (!usuario) {
+            
+            //Si el usuasrio existe
+            return res.status(400).json({
+                mensaje: "Correo o contraseña invalido"
+            })
+        }
 
         //Confirmar si el password es valido
+        const passwordValido = bcrypt.compareSync(password, usuario.password);
+        if(!passwordValido){
+
+            return res.status(400).json({
+                mensaje: "Correo o contraseña invalido"
+            })
+        }
 
         //Responder que el usuario es valido
-
+        res.status(200).json({
+            mensaje: "El usuario existe",
+            uid: usuario._id,
+            nombre: usuario.nombre
+        })
         
     } catch (error) {
         console.log(error)
@@ -60,19 +80,3 @@ export const crearUsuario = async (req, res) => {
     }
 
 }
-
-export const borrarUsuario = (res, req) => {
-    res.send("logued")
-}
-
-// export const login = (res, req) => {
-//     res.send("logued")
-// }
-
-// export const login = (res, req) => {
-//     res.send("logued")
-// }
-
-// export const login = (res, req) => {
-//     res.send("logued")
-// }
