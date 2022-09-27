@@ -1,4 +1,4 @@
-import mongoose, { Schema, schema } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const pedidoSchema = new Schema({
     usuario: {
@@ -10,8 +10,8 @@ const pedidoSchema = new Schema({
         type: String,
         required: true,
     },
-    productosDelMenu: {
-        type: String,
+    productosdelmenu: {
+        type: Array,
         required: true,
     },
     estado: {

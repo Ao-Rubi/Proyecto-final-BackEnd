@@ -5,6 +5,6 @@ const router = Router()
 
 router.route('/pedidos')
 .get(listaPedidos)
-.post(crearPedido);
+.post(crearPedido)
 
 export default router;
