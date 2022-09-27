@@ -1,4 +1,5 @@
 import { validationResult } from 'express-validator';
+import req from 'express/lib/request';
 import Pedido from '../models/pedidos';
 
 export const listaPedidos = async (req, res) => {
@@ -48,3 +49,16 @@ export const obtenerPedido = async (req, res) => {
         });
     }
 };
+
+export const editarPedido = async (req,res) =>{
+        try {
+                await Pedido.findByIdAndUpdate(req.params.id,req.body)
+                 res.status(200).json({
+            mensaje: 'El pedido fue modificado con exito',
+        });
+        } catch (error) {
+                 res.status(404).json({
+            mensaje: 'Error al buscar el pedido',
+        });
+        }
+}
