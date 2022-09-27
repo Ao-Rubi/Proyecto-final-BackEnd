@@ -6,11 +6,11 @@ const router = Router();
 
 
 // Agregar validaciones con express validator
-router.route("/usuario")
+router.route("/")
 .post(
     [ validarUsuario ],login);
 
-router.route("/usuario/nuevo")
+router.route("/nuevo")
 .post(
     [ validarCreacionUsuario ],crearUsuario);
 
