@@ -37,3 +37,14 @@ export const crearPedido = async (req, res) => {
         });
     }
 };
+
+export const obtenerPedido = async (req, res) => {
+    try {
+        const pedidoBuscado = await Pedido.findById(req.params.id);
+        res.status(200).json(pedidoBuscado);
+    } catch (error) {
+        res.status(404).json({
+            mensaje: 'No se encontro el pedido',
+        });
+    }
+};
