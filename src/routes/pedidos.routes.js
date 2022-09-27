@@ -8,9 +8,10 @@ router.route('/pedidos')
 .get(listaPedidos)
 .post(validarPedido,crearPedido);
 
-router.route('/pedidos/:id')
-.get(obtenerPedido)
-.put(editarPedido)
-.delete(borrarPedido)
+router
+    .route('/pedidos/:id')
+    .get(obtenerPedido)
+    .put(validarPedido,editarPedido)
+    .delete(borrarPedido);
 
 export default router;
