@@ -1,10 +1,15 @@
 import { validationResult } from 'express-validator';
 import Pedido from '../models/pedidos';
 
-export const listaPedidos = (req, res) => {
-    res.status(200).json({
-        mensaje: 'peticion get',
-    });
+export const listaPedidos = async (req, res) => {
+    try {
+        const listarPedidos = await Pedido.find();
+        res.status(200).json(listarPedidos);
+    } catch (error) {
+        res.status(404).json({
+            mensaje: 'No se encontraron los pedidos',
+        });
+    }
 };
 
 export const crearPedido = async (req, res) => {
