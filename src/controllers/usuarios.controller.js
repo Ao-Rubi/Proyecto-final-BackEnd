@@ -1,5 +1,6 @@
 import Usuario from "../models/usuario";
 import bcrypt from "bcryptjs";
+import generarJWT from "../helpers/jwt";
 
 export const login = async (req, res) => {
     try {
@@ -25,11 +26,15 @@ export const login = async (req, res) => {
             })
         }
 
+        // Generar el token
+        const token = await generarJWT(usuario._id, usuario.nombre);
+
         //Responder que el usuario es valido
         res.status(200).json({
             mensaje: "El usuario existe",
             uid: usuario._id,
-            nombre: usuario.nombre
+            nombre: usuario.nombre,
+            token: token
         })
         
     } catch (error) {
@@ -54,9 +59,6 @@ export const crearUsuario = async (req, res) => {
             })
         }
 
-
-        // Generar el token
-
         // Guardamos el nuevo user en la Base de datos
         usuario = new Usuario(req.body);
 
@@ -64,11 +66,15 @@ export const crearUsuario = async (req, res) => {
         const salt = bcrypt.genSaltSync();
         usuario.password = bcrypt.hashSync(password, salt);
 
+        // Generar el token
+        const token = await generarJWT(usuario._id, usuario.nombre);
+
         await usuario.save();
         res.status(201).json({
             mensaje: "Usuario creado correctamente",
             nombre: usuario.nombre,
-            uid: usuario._id
+            uid: usuario._id,
+            token: token
         })
 
 
