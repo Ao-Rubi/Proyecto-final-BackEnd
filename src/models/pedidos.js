@@ -5,6 +5,8 @@ const pedidoSchema = new Schema({
         type: String,
         required: true,
         unique: true,
+        minlength: 4,
+        maxlength: 30,
     },
     fecha: {
         type: String,
