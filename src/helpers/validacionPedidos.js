@@ -1,5 +1,5 @@
 import { check } from 'express-validator';
-import resultadoValidacion from './resultadoValidacion';
+import resultadosValidacion from './resultadoValidacion';
 import moment from 'moment';
 
 const validarPedido = [
@@ -50,7 +50,7 @@ const validarPedido = [
             else throw new Error('La respuesta debe ser de tipo booleana');
         }),
     (req, res, next) => {
-        resultadoValidacion(req, res, next);
+        resultadosValidacion(req, res, next);
     },
 ];
 export default validarPedido;
