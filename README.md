@@ -10,7 +10,7 @@ Para facilitar el testeo de cada una de las peticiones de la rama de pedidos, ag
 {
     "usuario":"Nombre de usuario",
     "fecha":"dd/mm/aa",
-    "productosdelmenu":["producto_1","prodicto_2"],
+    "productosdelmenu":["producto_1","producto_2"],
     "estado":"true"
 }
 ``` 
