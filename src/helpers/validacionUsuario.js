@@ -1,5 +1,5 @@
 import { check } from "express-validator";
-import resultadosValidacionesUsuario from "../helpers/resultadoValidacionUsuario";
+import resultadosValidacionesUsuario from "../helpers/resultadoValidacion";
 
 export const validarUsuario = [
     check("email")
