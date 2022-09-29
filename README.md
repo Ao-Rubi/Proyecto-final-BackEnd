@@ -47,7 +47,8 @@ Para facilitar el testeo de cada una de las peticiones de la rama de pedidos, ag
 
 Para facilitar el testeo de cada una de las peticiones de login y registro, agregamos la siguiente informacion:
 
-### Registro: http://localhost:4000/burgers&beer/usuario/nuevo
+### Registro: 
+ <li>http://localhost:4000/burgers&beer/usuario/nuevo
 
  ```json
 {
@@ -57,7 +58,8 @@ Para facilitar el testeo de cada una de las peticiones de login y registro, agre
 }
 ``` 
 
-### Login: http://localhost:4000/burgers&beer/usuario
+### Login:
+  <li>http://localhost:4000/burgers&beer/usuario
 
  ```json
 {
