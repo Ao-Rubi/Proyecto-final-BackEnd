@@ -41,6 +41,32 @@ Para facilitar el testeo de cada una de las peticiones de la rama de pedidos, ag
 <li>http://localhost:4000/burgers&beer/pedidos/:id
 
 
+## Login y registro 
+
+### Testeo
+
+Para facilitar el testeo de cada una de las peticiones de login y registro, agregamos la siguiente informacion:
+
+### Registro: http://localhost:4000/burgers&beer/usuario/nuevo
+
+ ```json
+{
+    "nombre":"Nombre de usuario",
+    "email":"ejemplo@ejemplo.com",
+    "password":"ejemplo"
+}
+``` 
+
+### Login: http://localhost:4000/burgers&beer/usuario
+
+ ```json
+{
+    "email":"ejemplo@ejemplo.com",
+    "password":"ejemplo"
+}
+``` 
+
+
 
 
 
