@@ -17,8 +17,8 @@ Para facilitar el testeo de cada una de las peticiones de la rama de productos, 
 }
 ``` 
 ### Rutas ( servidor local ) :
-<li>http://localhost:4000/burgers&beer/productos
-<li>http://localhost:4000/burgers&beer/productos/:id
+<li>http://localhost:4000/burgersandbeer/productos
+<li>http://localhost:4000/burgersandbeer/productos/:id
 
 ## Rama de pedidos 
 
@@ -37,8 +37,8 @@ Para facilitar el testeo de cada una de las peticiones de la rama de pedidos, ag
 }
 ``` 
 ### Rutas ( servidor local ) :
-<li>http://localhost:4000/burgers&beer/pedidos
-<li>http://localhost:4000/burgers&beer/pedidos/:id
+<li>http://localhost:4000/burgersandbeer/pedidos
+<li>http://localhost:4000/burgersandbeer/pedidos/:id
 
 
 ## Login y registro 
@@ -49,7 +49,7 @@ Para facilitar el testeo de cada una de las peticiones de login y registro, agre
 
 ### Registro: 
  Ruta( servidor local )
- <li>http://localhost:4000/burgers&beer/usuario/nuevo
+ <li>http://localhost:4000/burgersandbeer/usuario/nuevo
 
  ```json
 {
@@ -61,7 +61,7 @@ Para facilitar el testeo de cada una de las peticiones de login y registro, agre
 
 ### Login:
   Ruta( servidor local )
-  <li>http://localhost:4000/burgers&beer/usuario
+  <li>http://localhost:4000/burgersandbeer/usuario
 
  ```json
 {
