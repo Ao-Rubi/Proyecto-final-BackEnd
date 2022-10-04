@@ -23,5 +23,5 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/burgers&beer', router );
-app.use("/burgers&beer/usuario", auth);
+app.use('/burgersandbeer', router );
+app.use("/burgersandbeer/usuario", auth);
