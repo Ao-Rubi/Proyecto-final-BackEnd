@@ -7,6 +7,7 @@ import * as dotenv from 'dotenv';
 import router from './src/routes/productos.routes';
 import "./src/database";
 import auth from "./src/routes/usuarios.routes";
+import routerPedidos from './src/routes/pedidos.routes';
 
 const app = express();
 
@@ -24,4 +25,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/burgersandbeer', router );
+app.use('/burgersandbeer', routerPedidos );
 app.use("/burgersandbeer/usuario", auth);
