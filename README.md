@@ -1,10 +1,24 @@
-## Rama de productos 
+# Proyecto final - backend
+<p align="center"> <img src="./logoLed.png" alt="logo-burgerhouse" height="200" width="200"/> </p>
 
-### Testeo
+## 🧪 Testeo
 
-Para facilitar el testeo de cada una de las peticiones de la rama de productos, agregamos la siguiente informacion:
+Para facilitar el envio de datos a la API se adjuntan modelos para productos, pedidos, login y registro
 
-### Modelo: 
+## 📗 Bibliotecas Externas
+
+ - dotenv
+ - cors 
+ - express validator
+ - mongoose
+ - morgan
+ - json web token
+ - babel
+ - bcrypts
+
+## 🍔 Rama de productos 
+
+- Modelo: 
 
  ```json
 {
@@ -16,17 +30,15 @@ Para facilitar el testeo de cada una de las peticiones de la rama de productos, 
   "imagen": "url de la imagen"
 }
 ``` 
-### Rutas ( servidor local ) :
-<li>http://localhost:4000/burgersandbeer/productos
-<li>http://localhost:4000/burgersandbeer/productos/:id
+- Rutas ( servidor local ) :
+```
+http://localhost:4000/burgersandbeer/productos
+http://localhost:4000/burgersandbeer/productos/:id
+```
 
-## Rama de pedidos 
+## ▶️ Rama de pedidos 
 
-### Testeo
-
-Para facilitar el testeo de cada una de las peticiones de la rama de pedidos, agregamos la siguiente informacion:
-
-### Modelo: 
+- Modelo: 
 
  ```json
 {
@@ -36,24 +48,15 @@ Para facilitar el testeo de cada una de las peticiones de la rama de pedidos, ag
     "estado":"true"
 }
 ``` 
-### Rutas ( servidor local ) :
-<li>http://localhost:4000/burgersandbeer/pedidos
-<li>http://localhost:4000/burgersandbeer/pedidos/:id
+- Rutas ( servidor local ) :
+```
+http://localhost:4000/burgersandbeer/pedidos
+http://localhost:4000/burgersandbeer/pedidos/:id
+```
 
+## 🙍 Login y registro 
 
-## Login y registro 
-
-### Testeo
-
-Para facilitar el testeo de cada una de las peticiones de login y registro, agregamos la siguiente informacion:
-
-### Registro: 
- Ruta( servidor local )
- <li>http://localhost:4000/burgersandbeer/usuario/nuevo
- 
- Ruta ( Servidor )
- <li>https://proyecto-final-backend.vercel.app/usuario/nuevo
-
+ - Modelo Registro: 
  ```json
 {
     "nombre":"Nombre de usuario",
@@ -61,13 +64,12 @@ Para facilitar el testeo de cada una de las peticiones de login y registro, agre
     "password":"ejemplo"
 }
 ``` 
-
-### Login:
-  Ruta( servidor local )
-  <li>http://localhost:4000/burgersandbeer/usuario
-  
-  Ruta ( Servidor )
-  <li>https://proyecto-final-backend.vercel.app/usuario
+  - Ruta
+  ```
+ http://localhost:4000/burgersandbeer/usuario/nuevo
+  ```
+ 
+  - Modelo Login:
 
  ```json
 {
@@ -75,6 +77,10 @@ Para facilitar el testeo de cada una de las peticiones de login y registro, agre
     "password":"ejemplo"
 }
 ``` 
+- Ruta 
+```
+http://localhost:4000/burgersandbeer/usuario
+```
 
 
 
