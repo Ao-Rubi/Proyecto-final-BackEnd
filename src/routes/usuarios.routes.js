@@ -17,7 +17,6 @@ router.route("/habilitar/:id")
 .post(habilitarUsuario);
 
 router.route("/nuevo")
-.post(
-    [ validarCreacionUsuario ],crearUsuario);
+.post([ validarCreacionUsuario ],crearUsuario);
 
 export default router;
