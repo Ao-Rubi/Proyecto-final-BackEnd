@@ -50,6 +50,9 @@ Para facilitar el testeo de cada una de las peticiones de login y registro, agre
 ### Registro: 
  Ruta( servidor local )
  <li>http://localhost:4000/burgersandbeer/usuario/nuevo
+ 
+ Ruta ( Servidor )
+ <li>https://proyecto-final-backend.vercel.app/usuario/nuevo
 
  ```json
 {
@@ -62,6 +65,9 @@ Para facilitar el testeo de cada una de las peticiones de login y registro, agre
 ### Login:
   Ruta( servidor local )
   <li>http://localhost:4000/burgersandbeer/usuario
+  
+  Ruta ( Servidor )
+  <li>https://proyecto-final-backend.vercel.app/usuario
 
  ```json
 {
