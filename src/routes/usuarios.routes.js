@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { crearUsuario, login, listarUsuarios, suspenderUsuario, habilitarUsuario } from "../controllers/usuarios.controller";
+import { crearUsuario, login, listarUsuarios, suspenderUsuario, habilitarUsuario, borrarUsuario } from "../controllers/usuarios.controller";
 import { validarCreacionUsuario, validarUsuario } from "../helpers/validacionUsuario";
 
 const router = Router();
@@ -16,5 +16,8 @@ router.route("/habilitar/:id")
 
 router.route("/nuevo")
 .post([ validarCreacionUsuario ],crearUsuario);
+
+router.route("/eliminar/:id")
+.delete(borrarUsuario);
 
 export default router;
