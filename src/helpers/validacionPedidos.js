@@ -26,22 +26,7 @@ const validarPedido = [
         }),
     check('productosdelmenu')
         .notEmpty()
-        .withMessage('Los productos son obligatorios')
-        .custom((input) => {
-            let productosValidados = 0;
-            input.forEach((producto) => {
-                if (producto.length >= 2 && producto.length <= 30)
-                    productosValidados++;
-            });
-            if (input.length === productosValidados) {
-                return true;
-            } else {
-                return false;
-            }
-        })
-        .withMessage(
-            'Cada producto agregado debe contener entre (2 y 30 ) caracteres'
-        ),
+        .withMessage('Los productos son obligatorios'),
     check('estado')
         .notEmpty()
         .withMessage('El estado es obligatorio')
