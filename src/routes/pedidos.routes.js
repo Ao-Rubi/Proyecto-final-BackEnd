@@ -13,8 +13,9 @@ router
     .get(obtenerPedido)
     .put(validarPedido,editarPedido)
     .delete(borrarPedido);
+
 router
     .route("/entregado/:id")
-    .post(suspenderUsuario);
+    .post(entregado);
 
 export default router;
