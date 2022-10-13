@@ -31,7 +31,7 @@ const validarPedido = [
         .notEmpty()
         .withMessage('El estado es obligatorio')
         .custom((input) => {
-            if (input === Boolean(true)) return true;
+            if (input === Boolean(false)) return true;
             else throw new Error('La respuesta debe ser de tipo booleana');
         }),
     (req, res, next) => {
