@@ -98,3 +98,34 @@ export const listarUsuarios = async (req,res) =>{
         })
     }
 }
+
+export const suspenderUsuario = async(req, res)=>{
+    try {
+        //await Producto.findByIdAndUpdate(req.params.id,req.body);
+        await Usuario.updateOne({ _id: req.params.id }, { estado: false });
+        res.status(200).json({
+            mensaje: "Usuario suspendido correctamente"
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({
+            mensaje: "Error, no se pudo suspender al usuario"
+        })
+    }
+}
+
+export const habilitarUsuario = async(req, res)=>{
+    try {
+        //await Producto.findByIdAndUpdate(req.params.id,req.body);
+        await Usuario.updateOne({ _id: req.params.id }, { estado: true });
+        res.status(200).json({
+            mensaje: "Usuario habilitado correctamente"
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({
+            mensaje: "Error, no se pudo habilitar al usuario"
+        })
+    }
+}
+
