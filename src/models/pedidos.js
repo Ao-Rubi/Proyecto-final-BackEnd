@@ -13,7 +13,7 @@ const pedidoSchema = new Schema({
         required: true,
     },
     productosdelmenu: {
-        type: Array,
+        type: Object,
         required: true,
     },
     estado: {
