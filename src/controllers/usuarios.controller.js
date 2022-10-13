@@ -91,6 +91,19 @@ export const listarUsuarios = async (req,res) =>{
     }
 }
 
+export const borrarUsuario = async (req, res) => {
+    try {
+        await Usuario.findByIdAndDelete(req.params.id);
+        res.status(200).json({
+            mensaje: 'El pedido se elimino con exito',
+        });
+    } catch (error) {
+        res.status(400).json({
+            mensaje: 'El pedido no pudo ser eliminado',
+        });
+    }
+};
+
 export const suspenderUsuario = async(req, res)=>{
     try {
         await Usuario.updateOne({ _id: req.params.id }, { estado: false });
