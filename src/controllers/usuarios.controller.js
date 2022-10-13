@@ -5,19 +5,16 @@ import generarJWT from "../helpers/jwt";
 export const login = async (req, res) => {
     try {
 
-        //Verifica si existe el email recibido
         const {email, password} = req.body
 
         let usuario = await Usuario.findOne({email});
         if (!usuario) {
             
-            //Si el usuasrio existe
             return res.status(400).json({
                 mensaje: "Correo o contraseña invalido"
             })
         }
 
-        //Confirmar si el password es valido
         const passwordValido = bcrypt.compareSync(password, usuario.password);
         if(!passwordValido){
 
@@ -26,10 +23,8 @@ export const login = async (req, res) => {
             })
         }
 
-        // Generar el token
         const token = await generarJWT(usuario._id, usuario.nombre);
 
-        //Responder que el usuario es valido
         res.status(200).json({
             mensaje: "El usuario existe",
             uid: usuario._id,
@@ -52,23 +47,18 @@ export const crearUsuario = async (req, res) => {
     try {
         const {nombre, email, password} = req.body;
 
-        // Verificar si el email existe
         let usuario = await Usuario.findOne({email});
         if (usuario) {
-            //User existe
             return res.status(400).json({
                 mensaje: "Ya existe un usuario con este correo"
             })
         }
 
-        // Guardamos el nuevo user en la Base de datos
         usuario = new Usuario(req.body);
 
-        // Encriptar la contraseña
         const salt = bcrypt.genSaltSync();
         usuario.password = bcrypt.hashSync(password, salt);
 
-        // Generar el token
         const token = await generarJWT(usuario._id, usuario.nombre);
 
         await usuario.save();
@@ -103,7 +93,6 @@ export const listarUsuarios = async (req,res) =>{
 
 export const suspenderUsuario = async(req, res)=>{
     try {
-        //await Producto.findByIdAndUpdate(req.params.id,req.body);
         await Usuario.updateOne({ _id: req.params.id }, { estado: false });
         res.status(200).json({
             mensaje: "Usuario suspendido correctamente"
@@ -118,7 +107,6 @@ export const suspenderUsuario = async(req, res)=>{
 
 export const habilitarUsuario = async(req, res)=>{
     try {
-        //await Producto.findByIdAndUpdate(req.params.id,req.body);
         await Usuario.updateOne({ _id: req.params.id }, { estado: true });
         res.status(200).json({
             mensaje: "Usuario habilitado correctamente"

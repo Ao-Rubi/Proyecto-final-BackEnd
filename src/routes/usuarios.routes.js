@@ -4,8 +4,6 @@ import { validarCreacionUsuario, validarUsuario } from "../helpers/validacionUsu
 
 const router = Router();
 
-
-// Agregar validaciones con express validator
 router.route("/")
 .get(listarUsuarios)
 .post([ validarUsuario ],login);
