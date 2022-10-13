@@ -22,11 +22,9 @@ const usuarioSchema = new Schema({
     },
     estado:{
         type: Boolean,
-        // activo: false
     },
     perfil:{
         type: Boolean,
-        // administrador: false
     }
 })
 
