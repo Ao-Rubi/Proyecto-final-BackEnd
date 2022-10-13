@@ -78,7 +78,7 @@ export const borrarPedido = async (req, res) => {
 export const entregado = async (req, res) => {
     try {
         //await Producto.findByIdAndUpdate(req.params.id,req.body);
-        await Usuario.updateOne({ _id: req.params.id }, { estado: true });
+        await Pedido.updateOne({ _id: req.params.id }, { estado: true });
         res.status(200).json({
             mensaje: "Usuario suspendido correctamente"
         });
