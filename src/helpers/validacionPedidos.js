@@ -29,11 +29,8 @@ const validarPedido = [
         .withMessage('Los productos son obligatorios'),
     check('estado')
         .notEmpty()
-        .withMessage('El estado es obligatorio')
-        .custom((input) => {
-            if (input === Boolean(false)) return true;
-            else throw new Error('La respuesta debe ser de tipo booleana');
-        }),
+        .withMessage('El estado es obligatorio'),
+        
     (req, res, next) => {
         resultadosValidacion(req, res, next);
     },

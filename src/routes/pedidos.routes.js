@@ -14,8 +14,4 @@ router
     .put(validarPedido,editarPedido)
     .delete(borrarPedido);
 
-router
-    .route("/entregado/:id")
-    .post(entregado);
-
 export default router;

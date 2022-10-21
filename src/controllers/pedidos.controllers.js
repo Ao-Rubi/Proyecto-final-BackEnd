@@ -50,6 +50,7 @@ export const obtenerPedido = async (req, res) => {
 };
 
 export const editarPedido = async (req, res) => {
+    console.log(req.body)
     try {
         await Pedido.findByIdAndUpdate(req.params.id, req.body);
         res.status(200).json({
@@ -75,18 +76,4 @@ export const borrarPedido = async (req, res) => {
     }
 };
 
-export const entregado = async (req, res) => {
-    try {
-        //await Producto.findByIdAndUpdate(req.params.id,req.body);
-        await Pedido.updateOne({ _id: req.params.id }, { estado: true });
-        res.status(200).json({
-            mensaje: "Usuario suspendido correctamente"
-        });
-    } catch (error) {
-        console.log(error);
-        res.status(400).json({
-            mensaje: "Error, no se pudo suspender al usuario"
-        })
-    }
-};
 
