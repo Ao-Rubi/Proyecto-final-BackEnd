@@ -50,7 +50,6 @@ export const obtenerPedido = async (req, res) => {
 };
 
 export const editarPedido = async (req, res) => {
-    console.log(req.body)
     try {
         await Pedido.findByIdAndUpdate(req.params.id, req.body);
         res.status(200).json({
